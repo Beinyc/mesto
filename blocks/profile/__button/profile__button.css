@@ -1,0 +1,7 @@
+.profile__button {
+    padding: 0;
+    margin: 0;
+    background-image: url(../../../images/profile/Edit\ Button.png);
+    max-width: 24px;
+    max-height: 24px;
+}
