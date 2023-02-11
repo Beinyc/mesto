@@ -1,7 +1,29 @@
 .profile__button {
-    padding: 0;
-    margin: 0;
-    background-image: url(../../../images/profile/Edit\ Button.png);
-    max-width: 24px;
-    max-height: 24px;
+    background-image: url(../../../images/profile/add.svg);
+    background-position-x: center;
+    background-position-y: center;
+    background-color: black;
+    background-repeat: no-repeat;
+    width: 150px;
+    height: 50px;
+    justify-content: center;
+    border: solid 1px white;
+}
+
+@media (max-width: 679px){
+    .profile__button {
+        width: 320px;
+    }
+}
+
+@media (max-width: 340px){
+    .profile__button {
+        width: 282px;
+    }
+}
+
+.profile__button:hover {
+    opacity: 0.8;
+    transition: 0.4;
+    cursor: pointer;
 }

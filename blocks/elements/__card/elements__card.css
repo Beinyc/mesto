@@ -1,0 +1,18 @@
+.elements__card {
+    width: 100%;
+    background-color: white;
+    border-radius: 10px;
+}
+
+@media (max-width:548px){
+    .elements__card {
+        width: 92%;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width:320px){
+    .elements__card {
+        width: 88%;
+    }
+}
