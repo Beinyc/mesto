@@ -12,9 +12,14 @@
     overflow: hidden;
 }
 
+@media (max-width: 520px){
+    .profile__status{
+        max-width: 272px;
+    }
+}
+
 @media (max-width: 440px){
     .profile__status{
-        padding: 0;
         font-size: 14px;
         line-height: 17px;
     }

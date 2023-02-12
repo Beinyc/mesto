@@ -1,6 +1,6 @@
 .profile__name {
     margin: 0;
-    max-width: 294px;
+    max-width: 425px;
     font-family: 'Inter';
     font-style: normal;
     font-weight: 500;
@@ -12,9 +12,16 @@
     overflow: hidden;
 }
 
+@media (max-width: 820px){
+    .profile__name{
+        max-width: 290px;
+    }
+}
+
 @media (max-width: 678px){
     .profile__name{
         font-size: 29px;
+        max-width: 226px;
     }
 }
 

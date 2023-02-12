@@ -1,9 +1,6 @@
 .elements__like {
     background-image: url(../../../images/elements/heard.svg);
     border: 0;
-    background-position-x: center;
-    background-position-y: center;
-    background-color: white;
     background-repeat: no-repeat;
     width: 22px;
     height: 19px;

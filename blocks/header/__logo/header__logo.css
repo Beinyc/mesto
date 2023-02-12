@@ -3,11 +3,16 @@
     padding-bottom: 37px;
 }
 
+@media (max-width: 920px){
+    .header__logo {
+        padding-left: 27px;
+    }
+}
+
 @media (max-width: 678px){
     .header__logo {
         padding-top: 28px;
         padding-bottom: 31px;
-        padding-left: 27px;
     }
 }
 

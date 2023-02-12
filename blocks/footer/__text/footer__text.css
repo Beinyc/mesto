@@ -8,6 +8,13 @@
     padding-bottom: 60px;
 }
 
+@media (max-width:920px){
+    .footer__text {
+        padding-left: 19px;
+        padding-bottom: 36px;
+    }
+}
+
 @media (max-width:320px){
     .footer__text {
         font-size: 14px;

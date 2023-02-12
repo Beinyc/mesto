@@ -8,10 +8,16 @@
     grid-auto-flow: dense;
 }
 
-@media (max-width: 800px){
+@media (max-width: 920px){
     .elements {
-        max-width: 580px;
+        max-width: 600px;
         margin-top: 33px;
+    }
+}
+
+@media (max-width: 640px){
+    .elements {
+        max-width: 450px;
     }
 }
 
