@@ -1,4 +1,4 @@
-.profile__button-edit {
+.profile__redact {
     background-image: url(../../../../images/profile/edit.svg);
     background-repeat: no-repeat;
     background-position-x: center;
@@ -11,13 +11,13 @@
 }
 
 @media (max-width: 440px){
-    .profile__button-edit{
+    .profile__redact{
         width: 20px;
         height: 20px;
          }
 }
 
-.profile__button-edit:hover {
+.profile__redact:hover {
     opacity: 0.8;
     transition: 0.4;
     cursor: pointer;

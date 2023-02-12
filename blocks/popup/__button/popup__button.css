@@ -13,18 +13,20 @@
     margin-top: 23px;
     margin-left: 36px;
     font-family: 'Inter';
+    margin-bottom: 37px;
 }
 
 @media (max-width:470px){
     .popup__button {
+        font-size: 14px;
         width: 238px;
-        margin-top: 20px;
+        margin-top: 21px;
         margin-left: 20px;
+        margin-bottom: 13px;
     }
 }
 
 .popup__button:hover {
     opacity: 0.8;
-    transition: 0.4;
     cursor: pointer;
 }

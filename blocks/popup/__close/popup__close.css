@@ -1,20 +1,23 @@
 .popup__close {
-    background-image: url(../../../images/popup/Close\ Icon.svg);
+    background-image: url(../../../images/popup/Close_Icon.svg);
     background-position-x: center;
     background-position-y: center;
     background-repeat: no-repeat;
+    background-size: cover;
+    height: 32px;
     border: 0;
     position: absolute;
-    left: 439px;
+    right: 239px;
     top: -39px;
     width: 32px;
-    height: 32px;
+    right: -45px;
     background-color: rgba(0, 0, 0, 0.0);
 }
 
 @media (max-width:470px){
     .popup__close {
-        left: 259px;
+        top: -38px;
+        right: 2px;
         width: 20px;
         height: 20px;  
     }
