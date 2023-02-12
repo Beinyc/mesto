@@ -23,6 +23,6 @@
 
 @media (max-width: 320px){
     .elements {
-        grid-gap: 19px;
+        grid-gap: 20px;
     }
 }
