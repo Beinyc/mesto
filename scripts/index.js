@@ -30,3 +30,43 @@ function handleFormSubmit (evt) {
 }
 
 formElement.addEventListener('submit',handleFormSubmit);
+
+//Карточки с фотграфиямия и их код 
+const elementsList = document.querySelector('.elements')
+const elementsTemplate = document.querySelector('.elements__template').content;
+  
+const initialCards = [
+    {
+      name: 'Архыз',
+      link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
+    },
+    {
+      name: 'Челябинская область',
+      link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg'
+    },
+    {
+      name: 'Иваново',
+      link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg'
+    },
+    {
+      name: 'Камчатка',
+      link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg'
+    },
+    {
+      name: 'Холмогорский район',
+      link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg'
+    },
+    {
+      name: 'Байкал',
+      link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
+    }
+  ];
+
+  initialCards.forEach(function (element) {
+    const cardElement = elementsTemplate.cloneNode(true);
+  
+    cardElement.querySelector('.elements__image').src = element.link;
+    cardElement.querySelector('.elements__title').textContent = element.name
+  
+    elementsList.append(cardElement);
+  })
