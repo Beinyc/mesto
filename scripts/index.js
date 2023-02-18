@@ -37,12 +37,12 @@ const elementsTemplate = document.querySelector('.elements__template').content;
   
 const initialCards = [
     {
-      name: 'Архыз',
-      link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
+      name: 'Таунсвилл',
+      link: 'https://images.unsplash.com/photo-1636155986820-f3e538e9bf23?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80'
     },
     {
-      name: 'Челябинская область',
-      link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg'
+      name: 'Нью-Йорк, США',
+      link: 'https://images.unsplash.com/photo-1675904626459-ae694b824ac0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80'
     },
     {
       name: 'Иваново',
@@ -70,3 +70,25 @@ const initialCards = [
   
     elementsList.append(cardElement);
   })
+
+  //попап для добавления новой фотографии
+
+let addMestoButton = document.querySelector('.profile__button');
+let openPopupDuble = document.querySelector('.popupduble');
+let closePopupDuble = document.querySelector ('.popupduble');
+let formElementDuble = document.querySelector('form[name="form2"]');
+let nameInputDuble = document.querySelector('input[name="form2__name"]');
+let jobInputDuble = document.querySelector('input[name="form2__status"]');
+let closeImageButton = document.querySelector('.popup__close');
+
+addMestoButton.addEventListener('click', OpenForm2);
+
+closePopupDuble.addEventListener('click', closeForm2);
+
+function OpenForm2(){
+  openPopupDuble.classList.add('popupduble_opened');
+}
+
+function closeForm2(){
+  closePopupDuble.classList.remove('popupduble_opened');
+}
