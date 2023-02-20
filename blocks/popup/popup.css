@@ -1,4 +1,5 @@
 .popup {
+    visibility: hidden;
     font-family: 'Inter', 'Arial', sans-serif;
     position: fixed;
     width: 100%;
@@ -9,4 +10,6 @@
     display: none;
     justify-content: center;
     align-items: center;
+    opacity: 0;
+    transition: opacity 0.2s linear;
 }

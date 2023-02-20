@@ -79,11 +79,11 @@ let closePopupDuble = document.querySelector ('.popupduble');
 let formElementDuble = document.querySelector('form[name="form2"]');
 let nameInputDuble = document.querySelector('input[name="form2__name"]');
 let jobInputDuble = document.querySelector('input[name="form2__status"]');
-let closeImageButton = document.querySelector('.popup__close');
+let closeImageButton = document.querySelector('.popupduble__close');
 
 addMestoButton.addEventListener('click', OpenForm2);
 
-closePopupDuble.addEventListener('click', closeForm2);
+closeImageButton.addEventListener('click', closeForm2);
 
 function OpenForm2(){
   openPopupDuble.classList.add('popupduble_opened');
@@ -92,3 +92,17 @@ function OpenForm2(){
 function closeForm2(){
   closePopupDuble.classList.remove('popupduble_opened');
 }
+
+formElementDuble.addEventListener('submit',handleFormTwo);
+
+function handleFormTwo (evt) {
+  evt.preventDefault();
+  const cardElement = elementsTemplate.cloneNode(true);
+  cardElement.querySelector('.elements__image').src = jobInputDuble.value;
+  cardElement.querySelector('.elements__title').textContent = nameInputDuble.value;
+
+  elementsList.prepend(cardElement);
+
+  closeForm2 ()
+}
+
