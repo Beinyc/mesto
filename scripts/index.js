@@ -67,11 +67,9 @@ const initialCards = [
   
     cardElement.querySelector('.elements__image').src = element.link;
     cardElement.querySelector('.elements__title').textContent = element.name;
-    cardElement.querySelector('.elements__like').addEventListener('click', function (evt) {
+    cardElement.querySelector('.elements__like').addEventListener('click', function likeactive(evt) {
       evt.target.classList.toggle('elements__like_active');
     })
-    
-  
     elementsList.append(cardElement);
   })
 
@@ -104,9 +102,9 @@ function handleFormTwo (evt) {
   const cardElement = elementsTemplate.cloneNode(true);
   cardElement.querySelector('.elements__image').src = jobInputDuble.value;
   cardElement.querySelector('.elements__title').textContent = nameInputDuble.value;
-  
-
+  cardElement.querySelector('.elements__like').addEventListener('click', function likeactive(evt) {
+    evt.target.classList.toggle('elements__like_active');
+  })
   elementsList.prepend(cardElement);
-
   closeForm2 ()
 }
