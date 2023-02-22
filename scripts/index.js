@@ -1,6 +1,6 @@
 const poupEditProfile = document.querySelector('.popup_type_profile');
 const poupAddCard = document.querySelector('.popup_type_card');
-const poupImage = document.querySelector('.popup_type_image');
+const poupZoomImage = document.querySelector('.popup_type_image');
 
 const closeButton = document.querySelectorAll('.popup__close');
 const editProfileButton = document.querySelector('.profile__redact');
@@ -12,15 +12,15 @@ const jobElement = document.querySelector('.profile__status');
 const elementsList = document.querySelector('.elements');
 
 const formElementProfile = document.querySelector('form[name="form1"]');
-const nameInput = formElementProfile.elements["form1__name"];
-const jobInput = formElementProfile.elements["form1__status"];
+const nameInput = document.querySelector('input[name="form1__name"]');
+const jobInput = document.querySelector('input[name="form1__status"]');
 
 const formElementCrad = document.querySelector('form[name="form2"]');
-const nameInputDuble = formElementCrad.elements["form2__name"];
-const jobInputDuble = formElementCrad.elements["form2__status"];
+const nameInputDuble = document.querySelector('input[name="form2__name"]');
+const jobInputDuble = document.querySelector('input[name="form2__status"]');
 
-const imageCard = document.querySelector('.popup__image');
-const imageCardDiscription = document.querySelector('.popup__description');
+const popupImage = document.querySelector('.popup__image');
+const popupImageDescription = document.querySelector('.popup__description');
   
 const initialCards = [
     {
@@ -72,47 +72,47 @@ const initialCards = [
 
   function handleFormSubmitCard(evt) {
     evt.preventDefault();
-    addCard(nameInputDuble.value , jobInputDuble.value);
+    addCardElemts(nameInputDuble.value , jobInputDuble.value);
     closePopup(poupAddCard);
     evt.target.reset();
   }
 
-  function createCard(name, link) {
-    const cardTemplate = document.querySelector(".elements__template").content;
-    const cardElement = cardTemplate.querySelector(".elements__card").cloneNode(true);
+  function createElementCrad(name, link) {
+    const elementsTemplate = document.querySelector(".elements__template").content;
+    const elementCard = elementsTemplate.querySelector(".elements__card").cloneNode(true);
   
-    const imageElement = cardElement.querySelector(".elements__image");
-    imageElement.alt = name; 
-    imageElement.src = link || 'https://www.supermarket-santehniki.ru/upload/iblock/71f/qy7jgfaoee33m7clxxwnv3xfygdc2zaj/KEUCO-Stageline-32872970000-Tumba-pod-umyvalnik.jpg';
-    imageElement.addEventListener("click", function (evt) {
-      openPopup(poupImage);
-      imageCard.src = imageElement.src;
-      imageCardDiscription.textContent = descriptionElement.textContent;
+    const elementImage = elementCard.querySelector(".elements__image");
+    elementImage.alt = name; 
+    elementImage.src = link || 'https://www.supermarket-santehniki.ru/upload/iblock/71f/qy7jgfaoee33m7clxxwnv3xfygdc2zaj/KEUCO-Stageline-32872970000-Tumba-pod-umyvalnik.jpg';
+    elementImage.addEventListener("click", function (evt) {
+      openPopup(poupZoomImage);
+      popupImage.src = elementImage.src;
+      popupImageDescription.textContent = elementTitle.textContent;
     });
 
-    const descriptionElement = cardElement.querySelector(".elements__title");
-    descriptionElement.textContent = name || 'Нет названия картинки';
+    const elementTitle = elementCard.querySelector(".elements__title");
+    elementTitle.textContent = name || 'Нет названия картинки';
 
-    const buttonLike = cardElement.querySelector(".elements__like");
-    buttonLike.addEventListener("click", function (evt) {
+    const elementLike = elementCard.querySelector(".elements__like");
+    elementLike.addEventListener("click", function (evt) {
     evt.target.classList.toggle("elements__like_active");
   });
 
-  const buttonDelete = cardElement.querySelector(".elements__delete");
-  buttonDelete.addEventListener("click", function () {
-    cardElement.remove();
+  const elementDelete = elementCard.querySelector(".elements__delete");
+  elementDelete.addEventListener("click", function () {
+    elementCard.remove();
   });
 
-  return cardElement;
+  return elementCard;
 }
 
-function addCard(name, link) {
-  const cardElement = createCard(name, link);
-  elementsList.prepend(cardElement);
+function addCardElemts(name, link) {
+  const elementCard = createElementCrad(name, link);
+  elementsList.prepend(elementCard);
 }
 
 for (let i = 0; i < initialCards.length; i++) {
-  addCard(initialCards[i].name, initialCards[i].link);
+  addCardElemts(initialCards[i].name, initialCards[i].link);
 }
 
   editProfileButton.addEventListener("click", openPopupProfile);
