@@ -15,13 +15,13 @@
          <main>
             <section class="profile">
                <div class="profile__info">
-                  <img src="./images/profile/profile__avatar.svg" alt="аватарка" class="profile__avatar">
+                  <img src="./images/profile/photo_2022-12-16_05-05-37.jpg" alt="аватарка" class="profile__avatar">
                   <div class="profile__edit">
                      <div class="profile__row">
-                        <h1 class="profile__name">Жак-Ив Кусто</h1>
+                        <h1 class="profile__name">Апатенко Никита</h1>
                         <button  class="profile__redact" type="button"></button>
                      </div>
-                     <p class="profile__status">Исследователь океана</p>
+                     <p class="profile__status">Пытающийся понять javascript</p>
                   </div>
                </div>
                <button class="profile__button" type="button"></button>
@@ -29,7 +29,7 @@
             <section class="elements">
                <template class="elements__template">
                   <div class="elements__card">
-                     <img src="./images/elements/card1.jpg" alt="Фотография места" class="elements__image">
+                     <img src="#" alt="вставьте название" class="elements__image">
                      <div class="elements__signature">
                         <h2 class="elements__title"></h2>
                         <button class="elements__like" type="button"></button>
@@ -43,23 +43,32 @@
             <h4 class="footer__text">© 2023 Mesto Russia</h4>
          </footer>
       </div>
-      <section class="popup">
-         <form class="popup__container" name="form1">
-            <h3 class="popup__title">Редактировать профиль</h3>
-            <input type="text" value="Жак-Ив Кусто" class="popup__input" name="form1__name">
-            <input type="text" value="Исследователь океана" class="popup__input" name="form1__status">
-            <button class="popup__button" type="submit">Сохранить</button>
-            <button class="popup__close" type="button"></button>
-         </form>
-      </section>
-      <section class="popupduble">
-         <form class="popupduble__container" name="form2">
-            <h3 class="popupduble__title">Новое место</h3>
-            <input type="text" value="Название" class="popupduble__input" name="form2__name">
-            <input type="text" value="Ссылка на картинку" class="popupduble__input" name="form2__status">
-            <button class="popupduble__button" type="submit">Создать</button>
-            <button class="popupduble__close" type="button"></button>
-         </form>
+      <section class="popup__section">
+         <div class="popup popup_type_profile">
+            <form class="popup__profile_conteiner" name="form1">
+               <h3 class="popup__title">Редактировать профиль</h3>
+               <input type="text" value="Жак-Ив Кусто" class="popup__input" name="form1__name">
+               <input type="text" value="Исследователь океана" class="popup__input" name="form1__status">
+               <button class="popup__button" type="submit">Сохранить</button>
+               <button class="popup__close" type="button"></button>
+            </form>
+         </div>
+         <div class="popup popup_type_card">
+            <form class="popup__card_conteiner" name="form2">
+               <h3 class="popup__title">Новое место</h3>
+               <input type="" value="" placeholder="Название" class="popup__input" name="form2__name">
+               <input type="" value="" placeholder="Ссылка на картину" class="popup__input" name="form2__status">
+               <button class="popup__button" type="submit">Создать</button>
+               <button class="popup__close" type="button"></button>
+            </form>
+         </div>
+         <div class="popup popup_type_image">
+            <div class="popup__image_conteiner">
+            <img class="popup__image" src="https://images.unsplash.com/photo-1666096968009-f8b7bdd51ba3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" alt="#">
+            <h3 class="popup__description">Великолепный лес</h3>
+            <button type="button" class="popup__close"></button>
+            </div>
+         </div>
       </section>
       <script src="./scripts/index.js"></script>
    </body>

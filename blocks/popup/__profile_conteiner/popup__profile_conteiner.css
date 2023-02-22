@@ -1,4 +1,4 @@
-.popup__container {
+.popup__profile_conteiner {
     width: 424px;
     background: #FFFFFF;
     box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15);
@@ -7,7 +7,7 @@
 }
 
 @media (max-width:470px){
-    .popup__container {
+    .popup__profile_conteiner {
         width: 282px;
     }
 }
