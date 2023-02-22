@@ -24,28 +24,28 @@ const popupImageDescription = document.querySelector('.popup__description');
   
 const initialCards = [
     {
-      name: 'Великолепный лес',
-      link: 'https://images.unsplash.com/photo-1666096968009-f8b7bdd51ba3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80'
+      name: 'Огненный водопад',
+      link: 'https://images.unsplash.com/photo-1676912314401-6ffbc0dfda87?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80'
     },
     {
-      name: 'Нью-Йорк, США',
-      link: 'https://images.unsplash.com/photo-1675904626459-ae694b824ac0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80'
+      name: 'Закат на Саутбурн-Бич',
+      link: 'https://images.unsplash.com/photo-1676210385742-323a1644ce36?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=736&q=80'
     },
     {
-      name: 'Иваново',
-      link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg'
+      name: 'Полумесяц',
+      link: 'https://images.unsplash.com/photo-1675576185701-576b56aa57fd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=627&q=80'
     },
     {
       name: 'Камчатка',
       link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg'
     },
     {
-      name: 'Холмогорский район',
-      link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg'
+      name: 'Туннель из дерева',
+      link: 'https://images.unsplash.com/photo-1675407743943-ec967a92558f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80'
     },
     {
-      name: 'Байкал',
-      link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
+      name: 'Кот и солнечные ванны',
+      link: 'https://images.unsplash.com/photo-1674985594089-eab270e843c5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=627&q=80'
     }
   ];
 
@@ -56,6 +56,15 @@ const initialCards = [
   function closePopup(popup) {
     popup.classList.remove("popup_opened");
   }
+
+  editProfileButton.addEventListener("click", openPopupProfile);
+
+  addMestoButton.addEventListener("click", () => openPopup(poupAddCard));
+
+  closeButton.forEach((button) => {
+    const popup = button.closest(".popup");
+    button.addEventListener("click", () => closePopup(popup));
+  });
   
   function openPopupProfile() {
     openPopup(poupEditProfile);
@@ -76,6 +85,9 @@ const initialCards = [
     closePopup(poupAddCard);
     evt.target.reset();
   }
+
+  formElementProfile.addEventListener("submit", handleFormSubmitProfile);
+  formElementCrad.addEventListener("submit", handleFormSubmitCard);
 
   function createElementCrad(name, link) {
     const elementsTemplate = document.querySelector(".elements__template").content;
@@ -114,15 +126,3 @@ function addCardElemts(name, link) {
 for (let i = 0; i < initialCards.length; i++) {
   addCardElemts(initialCards[i].name, initialCards[i].link);
 }
-
-  editProfileButton.addEventListener("click", openPopupProfile);
-
-  addMestoButton.addEventListener("click", () => openPopup(poupAddCard));
-
-  closeButton.forEach((button) => {
-    const popup = button.closest(".popup");
-    button.addEventListener("click", () => closePopup(popup));
-  });
-
-  formElementProfile.addEventListener("submit", handleFormSubmitProfile);
-  formElementCrad.addEventListener("submit", handleFormSubmitCard);
