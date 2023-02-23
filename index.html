@@ -7,8 +7,8 @@
       <link rel="stylesheet" href="./pages/index.css">
       <title>Mesto</title>
    </head>
-   <body>
-      <div class="page">
+   <body class="page">
+      <div>
          <header class="header">
             <img src="./images/header/header__logo.svg" alt="логотип хедер" class="header__logo">
          </header>
@@ -43,9 +43,9 @@
             <h4 class="footer__text">© 2023 Mesto Russia</h4>
          </footer>
       </div>
-      <section class="popup__section">
+      <section>
          <div class="popup popup_type_profile">
-            <form class="popup__profile_conteiner" name="form1">
+            <form class="popup__conteiner" name="form1">
                <h3 class="popup__title">Редактировать профиль</h3>
                <input type="text" value="Жак-Ив Кусто" class="popup__input" name="form1__name">
                <input type="text" value="Исследователь океана" class="popup__input" name="form1__status">
@@ -54,7 +54,7 @@
             </form>
          </div>
          <div class="popup popup_type_card">
-            <form class="popup__card_conteiner" name="form2">
+            <form class="popup__conteiner" name="form2">
                <h3 class="popup__title">Новое место</h3>
                <input type="" value="" placeholder="Название" class="popup__input" name="form2__name">
                <input type="" value="" placeholder="Ссылка на картину" class="popup__input" name="form2__status">
@@ -63,8 +63,8 @@
             </form>
          </div>
          <div class="popup popup_type_image">
-            <div class="popup__image_conteiner">
-            <img class="popup__image" src="https://images.unsplash.com/photo-1666096968009-f8b7bdd51ba3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" alt="#">
+            <div class="popup__images">
+            <img class="popup__image" src="https://images.unsplash.com/photo-1666096968009-f8b7bdd51ba3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" alt="картинка">
             <h3 class="popup__description">Великолепный лес</h3>
             <button type="button" class="popup__close"></button>
             </div>

@@ -2,7 +2,7 @@ const poupEditProfile = document.querySelector('.popup_type_profile');
 const poupAddCard = document.querySelector('.popup_type_card');
 const poupZoomImage = document.querySelector('.popup_type_image');
 
-const closeButton = document.querySelectorAll('.popup__close');
+const closingButtons = document.querySelectorAll('.popup__close');
 const editProfileButton = document.querySelector('.profile__redact');
 const addMestoButton = document.querySelector('.profile__button');
 
@@ -10,6 +10,7 @@ const nameElement = document.querySelector(".profile__name");
 const jobElement = document.querySelector('.profile__status');
 
 const elementsList = document.querySelector('.elements');
+const elementsTemplate = document.querySelector(".elements__template").content;
 
 const formElementProfile = document.querySelector('form[name="form1"]');
 const nameInput = document.querySelector('input[name="form1__name"]');
@@ -61,7 +62,7 @@ const initialCards = [
 
   addMestoButton.addEventListener("click", () => openPopup(poupAddCard));
 
-  closeButton.forEach((button) => {
+  closingButtons.forEach((button) => {
     const popup = button.closest(".popup");
     button.addEventListener("click", () => closePopup(popup));
   });
@@ -90,7 +91,6 @@ const initialCards = [
   formElementCrad.addEventListener("submit", handleFormSubmitCard);
 
   function createElementCrad(name, link) {
-    const elementsTemplate = document.querySelector(".elements__template").content;
     const elementCard = elementsTemplate.querySelector(".elements__card").cloneNode(true);
   
     const elementImage = elementCard.querySelector(".elements__image");
@@ -98,6 +98,7 @@ const initialCards = [
     elementImage.src = link || 'https://www.supermarket-santehniki.ru/upload/iblock/71f/qy7jgfaoee33m7clxxwnv3xfygdc2zaj/KEUCO-Stageline-32872970000-Tumba-pod-umyvalnik.jpg';
     elementImage.addEventListener("click", function (evt) {
       openPopup(poupZoomImage);
+      popupImage.alt = elementImage.alt;
       popupImage.src = elementImage.src;
       popupImageDescription.textContent = elementTitle.textContent;
     });
