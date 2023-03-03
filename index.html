@@ -45,22 +45,30 @@
       </div>
       <section>
          <div class="popup popup_type_profile">
-            <form class="popup__conteiner" name="form1">
+            <div class="popup__conteiner">
                <h3 class="popup__title">Редактировать профиль</h3>
-               <input type="text" value="Жак-Ив Кусто" class="popup__input" name="form1__name">
-               <input type="text" value="Исследователь океана" class="popup__input" name="form1__status">
-               <button class="popup__button" type="submit">Сохранить</button>
+               <form id="form" name="form1" novalidate>
+                  <input type="text" placeholder="Имя" value="" class="popup__input" name="form1__name" minlength="2" maxlength="40" required>
+                  <span class="input-account-name-error">Необходимо заполнить данное поле</span>
+                  <input type="text" placeholder="Статус" value="" class="popup__input" name="form1__status" minlength="2" maxlength="200" required>
+                  <span class="input-profile-status-error">Необходимо заполнить данное поле</span>
+                  <button class="popup__button" type="submit">Сохранить</button>
+               </form>
                <button class="popup__close" type="button"></button>
-            </form>
+            </div>
          </div>
          <div class="popup popup_type_card">
-            <form class="popup__conteiner" name="form2">
+            <div class="popup__conteiner">
                <h3 class="popup__title">Новое место</h3>
-               <input type="" value="" placeholder="Название" class="popup__input" name="form2__name">
-               <input type="" value="" placeholder="Ссылка на картину" class="popup__input" name="form2__status">
-               <button class="popup__button" type="submit">Создать</button>
+               <form id="form" name="form2" novalidate>
+                  <input type="text" value="" placeholder="Название" class="popup__input" name="form2__name" minlength="2" maxlength="20" required>
+                  <span class="input-card-name-error">Необходимо заполнить данное поле</span>
+                  <input type="url" value="" placeholder="Ссылка на картину" class="popup__input" name="form2__status" required>
+                  <span class="input-card-url-error">Необходимо заполнить данное поле</span>
+                  <button class="popup__button" type="submit">Создать</button>
+               </form>
                <button class="popup__close" type="button"></button>
-            </form>
+            </div>
          </div>
          <div class="popup popup_type_image">
             <div class="popup__images">
@@ -71,5 +79,6 @@
          </div>
       </section>
       <script src="./scripts/index.js"></script>
+      <script src="./scripts/validate.js"></script>
    </body>
 </html>
