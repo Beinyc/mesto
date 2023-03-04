@@ -1,7 +1,3 @@
-const form = document.querySelector('.form');
-const formInput = form.querySelector('.form__input');
-const formError = form.querySelector(`.${formInput.id}-error`);
-
 const showInputError = (formElement, inputElement, errorMessage) => {
   const errorElement = formElement.querySelector(`.${inputElement.id}-error`);
   inputElement.classList.add('form__input_type_error');
@@ -33,14 +29,29 @@ const setEventListeners = (formElement) => {
   });
 };
 
-function enableValidation (){
+const enableValidation = () => {
   const formList = Array.from(document.querySelectorAll('.form'));
   formList.forEach((formElement) => {
-  formElement.addEventListener('submit', (evt) => {
-    evt.preventDefault();
-  });
+    formElement.addEventListener('submit', function (evt) {
+      evt.preventDefault();
+    });
 
     setEventListeners(formElement);
+  });
+};
+
+enableValidation();
+
+function hasInvalidInput(inputList){
+  return inputList.some((inputElement) => {
+  return !inputElement.validity.valid;
 });
 }
-enableValidation()
+
+function toggleButtonState (inputList, buttonElement){
+  if (hasInvalidInput(inputList)) {
+  buttonElement.classList.add('popup__button_inactive');
+} else {
+  buttonElement.classList.remove('popup__button_inactive');
+}
+}
