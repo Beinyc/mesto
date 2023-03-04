@@ -117,7 +117,7 @@ const initialCards = [
   
     const elementImage = elementCard.querySelector(".elements__image");
     elementImage.alt = name; 
-    elementImage.src = link || 'https://www.supermarket-santehniki.ru/upload/iblock/71f/qy7jgfaoee33m7clxxwnv3xfygdc2zaj/KEUCO-Stageline-32872970000-Tumba-pod-umyvalnik.jpg';
+    elementImage.src = link;
     elementImage.addEventListener("click", function (evt) {
       openPopup(poupZoomImage);
       popupImage.alt = elementImage.alt;
@@ -126,7 +126,7 @@ const initialCards = [
     });
 
     const elementTitle = elementCard.querySelector(".elements__title");
-    elementTitle.textContent = name || 'Нет названия картинки';
+    elementTitle.textContent = name;
 
     const elementLike = elementCard.querySelector(".elements__like");
     elementLike.addEventListener("click", function (evt) {
