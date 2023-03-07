@@ -49,16 +49,16 @@ function enableValidation(parameters) {
   });
 };
 
-// const configValideite = {
-//   formSelector: ".form",
-//   inputSelector: ".popup__input",
-//   submitButtonSelector: ".popup__button",
-//   inactiveButtonClass: "popup__button_inactive",
-//   inputErrorClass: "popup__input-error",
-//   errorClass: "popup__input-error_active",
-// }
+const configValideite = {
+  formSelector: ".form",
+  inputSelector: ".popup__input",
+  submitButtonSelector: ".popup__button",
+  inactiveButtonClass: "popup__button_inactive",
+  inputErrorClass: "popup__input-error",
+  errorClass: "popup__input-error_active",
+}
 
-enableValidation();
+enableValidation(configValideite);
 
 function hasInvalidInput(formInput) {
   return formInput.some((inputElement) => {
