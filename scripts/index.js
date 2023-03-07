@@ -22,6 +22,7 @@ const jobInputDuble = document.querySelector('input[name="form2__status"]');
 
 const popupImage = document.querySelector('.popup__image');
 const popupImageDescription = document.querySelector('.popup__description');
+const popupButton = document.querySelector('.popup__button')
 
 const allPopups = document.querySelectorAll('.popup');
 
@@ -56,7 +57,7 @@ function openPopup(popup) {
   popup.classList.add("popup_opened");
   document.addEventListener("keydown", closeEscPopup);
 
-  resetFormErrors(formElement, parameters)
+  resetFormErrors(formElementProfile, configValideite)
 }
 
 function closePopup(popup) {

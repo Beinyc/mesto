@@ -2,3 +2,9 @@
    max-width: 424px;
    margin-left: 36px;
 }
+
+@media (max-width: 468px){
+   .form {
+      margin-left: 20px;
+   }
+}
