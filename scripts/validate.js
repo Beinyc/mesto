@@ -1,11 +1,11 @@
-function showInputError(formElement, inputElement, errorMessage, parameters){
+function showInputError(formElement, inputElement, errorMessage, parameters) {
   const errorElement = formElement.querySelector(`.${inputElement.id}-error`);
   inputElement.classList.add(parameters.inputErrorClass);
   errorElement.classList.add(parameters.errorClass);
   errorElement.textContent = errorMessage;
 };
 
-function hideInputError(formElement, inputElement, parameters){
+function hideInputError(formElement, inputElement, parameters) {
   const errorElement = formElement.querySelector(`.${inputElement.id}-error`);
   inputElement.classList.remove(parameters.inputErrorClass);
   errorElement.classList.remove(parameters.errorClass);
@@ -20,7 +20,7 @@ const checkInputValidity = (formElement, inputElement, parameters) => {
   }
 };
 
-function setEventListeners (formElement, parameters) {
+function setEventListeners(formElement, parameters) {
   const formInput = Array.from(formElement.querySelectorAll(parameters.inputSelector));
   const buttonElement = formElement.querySelector(parameters.submitButtonSelector);
   toggleButtonStatus(formInput, buttonElement, parameters);
@@ -39,7 +39,7 @@ function setEventListeners (formElement, parameters) {
   });
 };
 
-function enableValidation(parameters){
+function enableValidation(parameters) {
   const formList = Array.from(document.querySelectorAll(parameters.formSelector));
   formList.forEach((formElement) => {
     formElement.addEventListener("submit", (evt) => {
@@ -73,3 +73,12 @@ function toggleButtonStatus(formInput, buttonElement, parameters) {
     buttonElement.removeAttribute('disabled');
   }
 }
+
+function resetFormErrors(formElement, parameters) {
+  const inputList = Array.from(formElement.querySelectorAll(parameters.inputSelector));
+  const buttonElement = formElement.querySelector(parameters.submitButtonSelector)
+  toggleButtonStatus(inputList, buttonElement, parameters)
+  inputList.forEach((buttonElement) => {
+    hideInputError(formElement, buttonElement, parameters)
+  });
+};
