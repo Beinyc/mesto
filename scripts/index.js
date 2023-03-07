@@ -24,7 +24,7 @@ const popupImage = document.querySelector('.popup__image');
 const popupImageDescription = document.querySelector('.popup__description');
 
 const popupAll = document.querySelectorAll('.popup');
-  
+
 const initialCards = [
     {
       name: 'Огненный водопад',
@@ -79,16 +79,18 @@ const initialCards = [
       }
     });
   });
-
+  
   editProfileButton.addEventListener("click", openPopupProfile);
-
+  // editProfileButton.addEventListener('click', function() {
+  //   openPopup(poupEditProfile)
+  // })
   addMestoButton.addEventListener("click", () => openPopup(poupAddCard));
 
   closingButtons.forEach((button) => {
     const popup = button.closest(".popup");
     button.addEventListener("click", () => closePopup(popup));
   });
-  
+
   function openPopupProfile() {
     openPopup(poupEditProfile);
     nameInput.value = nameElement.textContent;
@@ -99,6 +101,7 @@ const initialCards = [
     evt.preventDefault();
     nameElement.textContent = nameInput.value;
     jobElement.textContent = jobInput.value;
+
     closePopup(poupEditProfile);
   }
 
